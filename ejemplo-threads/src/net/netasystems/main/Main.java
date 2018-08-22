@@ -12,7 +12,7 @@ public class Main {
 		
 		for(int i=0 ; i < 10; i++){
 			
-			Thread t = new Thread(new HolaMundoThread(cn.ontenerNombre));
+			Thread t = new Thread(new HolaMundoThread(cn));
 			t.start();
 			
 		}
