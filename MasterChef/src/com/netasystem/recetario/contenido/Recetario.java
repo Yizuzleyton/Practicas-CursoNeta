@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Recetario {
 	
-	
+	//as
 	List<Recetas> agrega = new ArrayList<>();
 
 	public void Agregar(Recetas r){
