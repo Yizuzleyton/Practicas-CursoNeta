@@ -4,7 +4,7 @@ import net.netasystems.threads.CreadorDeNombres;
 import net.netasystems.threads.HolaMundoThreads;
 
 public class Main {
-//HOLA
+//HOL
 	public static void main(String[] args) {
 	
 		System.out.println("Programa para el hola mundo de los threads");
@@ -12,8 +12,7 @@ public class Main {
 		
 		for(int i=0 ; i < 10; i++){
 			
-			Thread t = new Thread(new HolaMundoThread(cn));
-			t.start();
+			
 			
 		}
 
