@@ -16,7 +16,7 @@ public class Agricultor implements Runnable {
 		
 	}
 	
-	public static int getCantidadRandom() {
+	public static  int getCantidadRandom() {
 		
 			
 			return(int) ram.nextInt(100);
@@ -25,7 +25,7 @@ public class Agricultor implements Runnable {
 		
 	}
 	
-	public static String getMAizDescripcion() {
+	public static  String getMAizDescripcion() {
 		
 		String tipoMaiz[] = {"transgenero","normal","organico","blanco", "negro"};
 		int index = (int) ram.nextInt(100)+10;

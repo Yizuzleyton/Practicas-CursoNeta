@@ -8,7 +8,6 @@ public class Main {
 		
 		System.out.println("ejemplo de productor");
 		
-		Correr c = new Correr();
 		Agricultor agricultor = new Agricultor();	
 		Cochinito hugo = new Cochinito();
 		
