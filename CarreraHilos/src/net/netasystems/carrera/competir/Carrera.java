@@ -1,32 +1,46 @@
 package net.netasystems.carrera.competir;
 
-import java.util.List;
 
+/**
+ * @author NS-394
+ *
+ */
 public class Carrera {
 	
-	private String nombreEquipo;
-	private List<String> nombreCorredor;
+private boolean flagTaken = false;
+private boolean flagFinish = false;
+
+
 	
-	public Carrera() {
-		super();
-		// TODO Auto-generated constructor stub
+	/**
+	 * @param threadName
+	 * @return
+	 */
+	public synchronized boolean aquireFlag(String threadName) {
+		if(flagTaken) {
+			return false;
+		}
+		System.out.println("Flag has been aquired by: "+threadName);
+		flagTaken = true;
+		return true;
 	}
-	public Carrera(String nombreEquipo, List<String> nombreCorredor) {
-		super();
-		this.nombreEquipo = nombreEquipo;
-		this.nombreCorredor = nombreCorredor;
+	
+	public void releaseFlag() {
+		flagTaken = false;
 	}
-	public String getNombreEquipo() {
-		return nombreEquipo;
+	
+	public synchronized boolean leaveFlag() {
+		return flagFinish;
 	}
-	public void setNombreEquipo(String nombreEquipo) {
-		this.nombreEquipo = nombreEquipo;
+	
+	public void fFlagFinish(boolean flagFinish) {
+		this.flagFinish = flagFinish;
 	}
-	public List<String> getNombreCorredor() {
-		return nombreCorredor;
+	
+	@Override
+	public String toString() {
+		return "Carrera [flagTaken=" + flagTaken + "]";
 	}
-	public void setNombreCorredor(List<String> nombreCorredor) {
-		this.nombreCorredor = nombreCorredor;
-	}
+	
 
 }

@@ -1,34 +1,69 @@
 package net.netasystems.carrera.competir;
 
-import java.util.Random;
 
+/**
+ * @author NS-394
+ *
+ */
 public class Corredores implements Runnable {
 	
 	
-private String nombre;
+	private Carrera carrera;
+	private boolean corre = true;
+	private String name;
+	private Equipos equipo;
 	
-	
-	public Corredores(String _nombre) {
-		nombre = _nombre;
+	/**
+	 * @param carrera
+	 * @param name
+	 * @param equipo
+	 */
+	public Corredores(Carrera carrera, String name, Equipos equipo) {
+		this.carrera = carrera;
+		this.name = name;
+		this.equipo = equipo;
 	}
 	
 	
-	public synchronized void run() {
-		// TODO Auto-generated method stub
-
-		Random r = new Random();
-		for (int i = 0; i < 10; i++) {
+	/* (non-Javadoc)
+	 * @see java.lang.Runnable#run()
+	 */
+	@Override
+	public void run() {
+		while(corre && !carrera.leaveFlag()) {
+			boolean aquired = false;
 			try {
-				Thread.sleep(r.nextInt(3));
+				Thread.sleep(150);
+				if (!carrera.leaveFlag()) {
+					aquired = carrera.aquireFlag(this.name);
+				}
+				
+				if(aquired) {
+					Thread.sleep(200);
+					carrera.releaseFlag();
+					this.corre = false;
+					equipo.corredorTermina();
+				}
+				if(carrera.leaveFlag() == true) {
+					
+					
+					this.corre = true;
+					System.out.println("falto:  " + this.name);
+				}
+				
+				
+				
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 		}
-		
-		System.out.println("El corredor " + nombre + " ha terminado");
-		
 		
 	}
 
+	@Override
+	public String toString() {
+		return "Corredores [carrera=" + carrera + ", corre=" + corre + ", name=" + name + ", equipo=" + equipo + "]";
+	}
 }
