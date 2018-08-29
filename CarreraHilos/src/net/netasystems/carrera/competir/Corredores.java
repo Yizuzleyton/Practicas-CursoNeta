@@ -44,12 +44,12 @@ public class Corredores implements Runnable {
 					this.corre = false;
 					equipo.corredorTermina();
 				}
-				if(carrera.leaveFlag() == true) {
+				/*if(carrera.leaveFlag() == true) {
 					
 					
 					this.corre = true;
 					System.out.println("falto:  " + this.name);
-				}
+				}*/
 				
 				
 				
