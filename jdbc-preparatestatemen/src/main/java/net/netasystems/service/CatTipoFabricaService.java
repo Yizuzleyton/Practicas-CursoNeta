@@ -21,4 +21,14 @@ public class CatTipoFabricaService {
 		public List<CatTipoFabrica> getAllRecords() throws SQLException{
 			return dao.getAllRecords();
 	}
+		public void addRecord(CatTipoFabrica record) throws SQLException{
+			
+			dao.addRecord(record);
+		}
+		public String updateRecord(CatTipoFabrica record) throws SQLException {
+			
+			return dao.updateRecord(record);
+		}
+
+		
 }

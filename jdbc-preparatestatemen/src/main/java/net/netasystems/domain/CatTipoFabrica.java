@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class CatTipoFabrica {
 	
-	public CatTipoFabrica(long idCatTipoFabrica, String nombre, char status, Date fechaModificacion, long idUsuario) {
+	public CatTipoFabrica(long idCatTipoFabrica, String nombre, Character status, Date fechaModificacion, long idUsuario) {
 		super();
 		this.idCatTipoFabrica = idCatTipoFabrica;
 		this.nombre = nombre;

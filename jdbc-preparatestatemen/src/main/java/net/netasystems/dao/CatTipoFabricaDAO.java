@@ -1,8 +1,8 @@
 package net.netasystems.dao;
 
-import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -51,11 +51,37 @@ private Connection con;
 		return lista;
 	}
 	
-	public void updateRecord(CatTipoFabrica record) {
+	public String updateRecord(CatTipoFabrica record) throws SQLException {
+		
+		String sqlupd = "UPDATE CAT_TIPO_FABRICA SET NOMBRE = ? WHERE NOMBRE= ?";
+		PreparedStatement pstmupd;
+			pstmupd = con.prepareStatement(sqlupd);
+			pstmupd.setString(1, record.getNombre());
+			pstmupd.setString(2, record.getNombre());
+			pstmupd.executeUpdate();
+			
+			pstmupd.close();
+			return sqlupd;
+		
+		
 		
 	}
 	
-	public void addRecord(CatTipoFabrica record) {
+	public void addRecord(CatTipoFabrica record) throws SQLException {
+		
+		String sqladd = "INSERT INTO CAT_TIPO_FABRICA (IDCATTIPOFABRICA, NOMBRE, ESTATUS, FECHAMODIFICACION, IDUSUARIO) VALUES (?,?,?,?,?)";
+		PreparedStatement pstmadd;
+		
+			pstmadd = con.prepareStatement(sqladd);
+			pstmadd.setLong(1,record.getIdCatTipoFabrica());
+			pstmadd.setString(2, record.getNombre());
+			pstmadd.setString(3, record.getStatus()+"");
+			pstmadd.setDate(4, (java.sql.Date) record.getFechaModificacion());
+			pstmadd.setLong(5, record.getIdUsuario());
+			pstmadd.executeUpdate();
+		
+			pstmadd.close();
+		
 		
 	}
 	
