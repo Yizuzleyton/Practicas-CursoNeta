@@ -19,7 +19,7 @@ public class Main {
 				 for(CatTipoFabrica c : lista) {
 					 System.out.println(c);
 				 }
-				CatTipoFabrica ctf = new CatTipoFabrica( 5, "jesus",'1',null,3);
+				CatTipoFabrica ctf = new CatTipoFabrica( 5, "jesus",'1',null,3); 
 				service.addRecord(ctf);
 				 
 				
