@@ -21,37 +21,7 @@ public class CatTipoFabrica {
 	private Date fechaModificacion;
 	private Long idUsuario;
 	
-	public long getIdCatTipoFabrica() {
-		return idCatTipoFabrica;
-	}
-	public void setIdCatTipoFabrica(long idCatTipoFabrica) {
-		this.idCatTipoFabrica = idCatTipoFabrica;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public Character getStatus() {
-		return status;
-	}
-	public void setStatus(Character status) {
-		this.status = status;
-	}
-	public Date getFechaModificacion() {
-		return fechaModificacion;
-	}
-	public void setFechaModificacion(Date fechaModificacion) {
-		this.fechaModificacion = fechaModificacion;
-	}
-	public Long getIdUsuario() {
-		return idUsuario;
-	}
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
-	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -96,5 +66,75 @@ public class CatTipoFabrica {
 	public String toString() {
 		return "CatTipoFabrica [idCatTipoFabrica=" + idCatTipoFabrica + ", nombre=" + nombre + ", status=" + status
 				+ ", fechaModificacion=" + fechaModificacion + ", idUsuario=" + idUsuario + "]";
+	}
+
+	/**
+	 * @return the idCatTipoFabrica
+	 */
+	public long getIdCatTipoFabrica() {
+		return idCatTipoFabrica;
+	}
+
+	/**
+	 * @param idCatTipoFabrica the idCatTipoFabrica to set
+	 */
+	public void setIdCatTipoFabrica(long idCatTipoFabrica) {
+		this.idCatTipoFabrica = idCatTipoFabrica;
+	}
+
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public Character getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(Character status) {
+		this.status = status;
+	}
+
+	/**
+	 * @return the fechaModificacion
+	 */
+	public Date getFechaModificacion() {
+		return fechaModificacion;
+	}
+
+	/**
+	 * @param fechaModificacion the fechaModificacion to set
+	 */
+	public void setFechaModificacion(Date fechaModificacion) {
+		this.fechaModificacion = fechaModificacion;
+	}
+
+	/**
+	 * @return the idUsuario
+	 */
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
+
+	/**
+	 * @param idUsuario the idUsuario to set
+	 */
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 }

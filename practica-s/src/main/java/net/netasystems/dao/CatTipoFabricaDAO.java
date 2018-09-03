@@ -11,6 +11,10 @@ import java.util.List;
 
 import net.netasystems.domain.CatTipoFabrica;
 
+/**
+ * @author Jesus Leyton
+ *
+ */
 public class CatTipoFabricaDAO {
 private Connection con;
 	
@@ -24,6 +28,12 @@ private Connection con;
 		con.close();
 	}
 	
+	/**
+	 * @return
+	 * @throws SQLException
+	 * 
+	 * Selec de las tabla CAT_TIPO_FABRICA
+	 */
 	public List<CatTipoFabrica> getAllRecords() throws SQLException{
 		List<CatTipoFabrica> lista = new ArrayList<CatTipoFabrica>();
 		String sql = "select IDCATTIPOFABRICA, NOMBRE, ESTATUS, FECHAMODIFICACION, IDUSUARIO from CAT_TIPO_FABRICA";

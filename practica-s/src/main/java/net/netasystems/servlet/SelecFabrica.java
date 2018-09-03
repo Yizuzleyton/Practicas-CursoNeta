@@ -15,6 +15,10 @@ import net.netasystems.service.CatTipoFabricaService;
 /**
  * Servlet implementation class SelecFabrica
  */
+/**
+ * @author Jesus Leyton
+ *
+ */
 public class SelecFabrica extends HttpServlet {
 	private static final long serialVersionUID = 1L; 
        
@@ -39,7 +43,7 @@ public class SelecFabrica extends HttpServlet {
 		
 		response.getWriter().append("<div>");
 		response.getWriter().append("<table>");
-		response.getWriter().append("<tr>");
+		response.getWriter().append("<tr "+"id="+ "main"+">");
 		response.getWriter().append("<th>"+ "ID" +"</th>");
 		response.getWriter().append("<th>"+ "NOMBRE" +"</th>");
 		response.getWriter().append("<th>"+ "ESTATUS" +"</th>");
@@ -81,7 +85,7 @@ public class SelecFabrica extends HttpServlet {
 		response.getWriter().append("<style>");
 		
 		response.getWriter().append("h1"+"{"
-		+"background-color:#eee;"
+		+"background-color:#FF5733;"
 		+"text-align: center;"
 				+"}");
 		
@@ -95,10 +99,16 @@ public class SelecFabrica extends HttpServlet {
 		+"border-collapse: collapse;"
 		+"width: 100%;"
 				+"}");
+		
+		response.getWriter().append("#main"+"{"
+				+"background-color:#FF5733;"
+				
+						+"}");
 		response.getWriter().append("th,td"+"{"
 				+"padding: 20px;"
 				
 						+"}");
+	
 		response.getWriter().append("tr:nth-child(even)"+"{"
 				+"background-color:#ddd;"
 				+"}");
