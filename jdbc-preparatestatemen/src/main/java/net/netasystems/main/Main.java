@@ -3,11 +3,17 @@ package net.netasystems.main;
 
 
 import java.sql.SQLException;
+
+
 import java.util.List;
 
 import net.netasystems.domain.CatTipoFabrica;
 import net.netasystems.service.CatTipoFabricaService;
 
+/**
+ * @author NS-394
+ *
+ */
 public class Main {
 
 		public static void main(String[] args) {
