@@ -13,28 +13,40 @@ import net.netasystems.domain.CatTipoFabrica;
 
 /**
  * @author Jesus Leyton
- *
+ * La clase realiza la conexion a la base de datos 
+ * y contienes metodos para realizar CRUD 
  */
 public class CatTipoFabricaDAO {
 private Connection con;
 	
+	/**
+	 * Conexion a la base de datos
+	 * @throws ClassNotFoundException
+	 * @throws SQLException excepcion de tipo SQL
+	 */
 	public CatTipoFabricaDAO() throws ClassNotFoundException, SQLException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		con = DriverManager.getConnection(  
 				"jdbc:oracle:thin:@198.23.75.98:1521:neta","EGLOBAL","egl0b4l");  
 	}
 	
+	/**
+	 * @throws SQLException excepcion de tipo SQL
+	 * el metodo cierra la conexion
+	 */
 	public void destroy() throws SQLException {
 		con.close();
 	}
 	
 	/**
-	 * @return
-	 * @throws SQLException
+	 * El metodo hace un Select de las tabla CAT_TIPO_FABRICA
 	 * 
-	 * Selec de las tabla CAT_TIPO_FABRICA
+	 * @return regresa una lista de tipo CatTipoFabrica
+	 * @throws SQLException excepcion de tipo SQL
+	 * 
 	 */
 	public List<CatTipoFabrica> getAllRecords() throws SQLException{
+		
 		List<CatTipoFabrica> lista = new ArrayList<CatTipoFabrica>();
 		String sql = "select IDCATTIPOFABRICA, NOMBRE, ESTATUS, FECHAMODIFICACION, IDUSUARIO from CAT_TIPO_FABRICA";
 		Statement stmt = con.createStatement();

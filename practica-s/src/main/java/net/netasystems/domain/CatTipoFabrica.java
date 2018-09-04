@@ -2,7 +2,22 @@ package net.netasystems.domain;
 
 import java.util.Date;
 
+/**
+ * variables de las tablas 
+ * @author Jesus Leyton
+ *
+ */
 public class CatTipoFabrica {
+	
+	/**
+	 * constructore con argumentos
+	 * 
+	 * @param idCatTipoFabrica asigna id de CatTipoFabrica
+	 * @param nombre asigna nombre de CatTipoFabrica
+	 * @param status asigna status de CatTipoFabrica
+	 * @param fechaModificacion asigna fecha de CatTipoFabrica
+	 * @param idUsuario asigna idusuario de CatTipoFabrica
+	 */
 	public CatTipoFabrica(long idCatTipoFabrica, String nombre, Character status, Date fechaModificacion, long idUsuario) {
 		super();
 		this.idCatTipoFabrica = idCatTipoFabrica;
@@ -12,6 +27,9 @@ public class CatTipoFabrica {
 		this.idUsuario = idUsuario;
 	}
 	
+	/**
+	 * Constructor vacio
+	 */
 	public CatTipoFabrica() {
 	}
 	
@@ -69,72 +87,84 @@ public class CatTipoFabrica {
 	}
 
 	/**
-	 * @return the idCatTipoFabrica
+	 * asigna el valos idCatTipoFabrica
+	 * @return regresa el valor idCatTipoFabrica
 	 */
 	public long getIdCatTipoFabrica() {
 		return idCatTipoFabrica;
 	}
 
 	/**
-	 * @param idCatTipoFabrica the idCatTipoFabrica to set
+	 *obtiene el valor idCatTipoFabrica
+	 * @param idCatTipoFabrica Asigna el valor a idCatTipoFabrica to set
 	 */
 	public void setIdCatTipoFabrica(long idCatTipoFabrica) {
 		this.idCatTipoFabrica = idCatTipoFabrica;
 	}
 
 	/**
-	 * @return the nombre
+	 * asigna el valos nombre
+	 * @return regresa el valor nombre
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 
 	/**
-	 * @param nombre the nombre to set
+	 *obtiene el valor nombre
+	 * @param nombre Asigna el valor a nombre to set
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
 	/**
-	 * @return the status
+	 * asigna el valos status
+	 * @return regresa el valor status
 	 */
 	public Character getStatus() {
 		return status;
 	}
 
 	/**
-	 * @param status the status to set
+	 *obtiene el valor status
+	 * @param status Asigna el valor a status to set
 	 */
 	public void setStatus(Character status) {
 		this.status = status;
 	}
 
 	/**
-	 * @return the fechaModificacion
+	 * asigna el valos fechaModificacion
+	 * @return regresa el valor fechaModificacion
 	 */
 	public Date getFechaModificacion() {
 		return fechaModificacion;
 	}
 
 	/**
-	 * @param fechaModificacion the fechaModificacion to set
+	 *obtiene el valor fechaModificacion
+	 * @param fechaModificacion Asigna el valor a fechaModificacion to set
 	 */
 	public void setFechaModificacion(Date fechaModificacion) {
 		this.fechaModificacion = fechaModificacion;
 	}
 
 	/**
-	 * @return the idUsuario
+	 * asigna el valos idUsuario
+	 * @return regresa el valor idUsuario
 	 */
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
 
 	/**
-	 * @param idUsuario the idUsuario to set
+	 *obtiene el valor idUsuario
+	 * @param idUsuario Asigna el valor a idUsuario to set
 	 */
 	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+
+	
 }

@@ -8,29 +8,33 @@ import net.netasystems.domain.CatTipoFabrica;
 
 /**
  * @author Jesus Leyton
- *
+ * Servicio de la clase CatTipoFabricaDAO
  */
 public class CatTipoFabricaService {
+	
 	private CatTipoFabricaDAO dao;
 	
 	/**
+	 * constructor sin argumentos
 	 * @throws ClassNotFoundException
-	 * @throws SQLException
+	 * @throws SQLException excepcion tipo SQL
 	 */
 	public CatTipoFabricaService() throws ClassNotFoundException, SQLException {
 		dao = new CatTipoFabricaDAO();
 	}
 	
 	/**
-	 * @throws SQLException
+	 * cierre de servicios
+	 * @throws SQLException excepcion SQL
 	 */
 	public void close() throws SQLException {
 		dao.destroy();
 	}
 	
 	/**
-	 * @return
-	 * @throws SQLException
+	 * obtiene datos de la base de datos traidos en lista
+	 * @return dao para obtener los datos
+	 * @throws SQLException excepcion tipo SQL
 	 */
 	public List<CatTipoFabrica> getAllRecords() throws SQLException{
 		return dao.getAllRecords();
